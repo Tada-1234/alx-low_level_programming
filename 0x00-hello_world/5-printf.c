@@ -1,0 +1,15 @@
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * Description: prints the contents of a string passed to printf with a newline
+ * parameter: there is no parameter
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	printf("%s \n", "with proper grammar, but the outcome is a piece of art,");
+	return (0);
+}
