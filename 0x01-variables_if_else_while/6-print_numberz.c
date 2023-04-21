@@ -11,13 +11,13 @@
 
 int main(void)
 {
-	char num_b;
-	int i;
+	int num_b, i;
 
-	num_b = '0';
+	num_b = 0;
 	for (i = 0; i < 10; i++)
 	{
-		putchar(num_b++);
+		putchar('0' + num_b);
+		num_b++;
 	}
 	putchar('\n');
 	return (0);

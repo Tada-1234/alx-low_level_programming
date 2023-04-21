@@ -16,17 +16,13 @@ int main(void)
 	numb = 0;
 	for (i = 0; i < 10; i++)
 	{
+		putchar('0' + numb);
 		if (i < 9)
 		{
-			putchar('0' + numb);
-			numb++;
 			putchar(',');
 			putchar(' ');
 		}
-		else
-		{
-			putchar('0' + numb);
-		}
+		numb++;
 	}
 	putchar('\n');
 	return (0);
