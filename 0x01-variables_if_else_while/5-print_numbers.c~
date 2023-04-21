@@ -1,0 +1,22 @@
+#include <stdio.h>
+/**
+ * main - entry point
+ *
+ * description - prints numbera 0 to 9
+ * parameters - nu_mb holds the number to be displayed
+ *
+ * Return: Returns the value 0
+ */
+
+int main(void)
+{
+	int nu_mb, i;
+
+	nu_mb = 0;
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d", nu_mb++);
+	}
+	putchar('\n');
+	return (0);
+}

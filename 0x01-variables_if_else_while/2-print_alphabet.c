@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+/**
+ * main - program starts here
+ *
+ * Description: this programs prints alphabet in lower case
+ * parameter: lower_case holds the letters
+ *
+ * Return: returns the value 0
+ */
+
+int main(void)
+{
+	char lower_case;
+	int i;
+
+	lower_case = 'a';
+	for (i = 0; i < 26; i++)
+	{
+		putchar(lower_case++);
+	}
+	putchar('\n');
+	return (0);
+}

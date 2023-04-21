@@ -1,0 +1,30 @@
+#include <stdio.h>
+/**
+ * main - Entry point
+ *
+ * description : print all letters except q and e
+ * parameters : lower_qe
+ *
+ * Return : returns the value 0
+ */
+
+int main(void)
+{
+	char lower_qe;
+	int i;
+
+	lower_qe = 'a';
+	for (i = 0; i<26; i++)
+	{
+		if (i == 4 || i == 16)
+		{
+			lower_qe++;
+		}
+		else
+		{
+			putchar(lower_qe++);
+		}
+	}
+	putchar('\n');
+	return (0);
+}
