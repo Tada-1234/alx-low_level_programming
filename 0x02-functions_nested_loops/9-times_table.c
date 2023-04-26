@@ -1,14 +1,29 @@
 #include "main.h"
 #include <stdio.h>
+/**
+ * times_table - prints the nine times table
+ * no parameters
+ *
+ * Return: no return value
+ */
 void times_table(void)
 {
-	int i,j;
+	int i, j;
+
 	for (i = 0; i < 10; i++)
 	{
-		printf("0, ");
-		for (j = 0; j < 9; j++)
+		for (j = 0; j < 10; j++)
 		{
-			printf("%d, ", i+j );
+			int x = 0 + (i * j);
+
+			if (j < 9)
+			{
+				printf("%3d,", x);
+			}
+			else
+			{
+				printf("%3d", x);
+			}
 		}
 		printf("\n");
 	}

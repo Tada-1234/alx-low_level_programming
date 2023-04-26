@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include "main.h"
+/**
+ * print_times_table - calculates the timetable of a int
+ * @n: holds an integer
+ *
+ * Return: Does not return anything
+ */
+void print_times_table(int n)
+{
+	int i, j, y;
+
+	y = n + 1;
+	if (n < 15 && n > 0)
+	{
+		for (i = 0; i < y; i++)
+		{
+			printf("0,");
+			for (j = 1; j < y; j++)
+			{
+				int x = 0 + (i * j);
+
+				if (j != n)
+				{
+					printf("%4d,", x);
+				}
+				else
+				{
+					printf("%4d", x);
+				}
+			}
+			printf("\n");
+		}
+	}
+}
