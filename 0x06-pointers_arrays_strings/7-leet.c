@@ -1,0 +1,46 @@
+#include "main.h"
+/**
+ * leet - encodes string into 1337
+ * @a: holds string
+ *
+ * Return: char
+ */
+char *leet(char *a)
+{
+	int i, j, len;
+
+	i = 0;
+	while (a[i] != '\0')
+	{
+		i++;
+	}
+	len = i;
+	for (j = 0; j < len; j++)
+	{
+		if (a[j] == 'a' || a[j] == 'A')
+		{
+			a[j] = '4';
+		}
+		else if (a[j] == 'e' || a[j] == 'E')
+		{
+			a[j] = '3';
+		}
+		else if (a[j] == 'o' || a[j] == 'O')
+		{
+			a[j] = '0';
+		}
+		else if (a[j] == 't' || a[j] == 'T')
+		{
+			a[j] = '7';
+		}
+		else if (a[j] == 'l' || a[j] == 'L')
+		{
+			a[j] = '1';
+		}
+		else
+		{
+			a[j] = a[j];
+		}
+	}
+	return (a);
+}

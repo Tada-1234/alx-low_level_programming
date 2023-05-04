@@ -1,36 +1,55 @@
 #include "main.h"
 /**
- * main - check the code
+ * cap_string - capitalizes the first letter of each word
+ * b: string to be capitalized
  *
- * Return: Always 0.
+ * Return: char
  */
 char *cap_string(char *b)
 {
-	int i;
+	int i, j, len;
 
 	i = 0;
 	while (b[i] != '\0')
 	{
-		while (!(b[i] >= 'a' && b[i] <= 'z'))
+		i++;
+	}
+	len = i;
+	for (j = 0; j < len; j++)
+	{
+		if (j == 0)
 		{
-			i++;
-			if (b[i - 1] == '\n' ||
-			    b[i - 1] == '\t' ||
-			    b[i - 1] == ',' ||
-			    b[i - 1] == ';' ||
-			    b[i] == '.' ||
-			    b[i] == ' ' ||
-			    b[i] == '!' ||
-			    b[i] == '?' ||
-			    b[i] == '"' ||
-			    b[i] == '(' ||
-			    b[i] == ')' ||
-			    b[i] == '{' ||
-			    b[i] == '}' ||
-			    i == 0)
+			b[j] = b[j];
+		}
+		else if (b[j] >= '0' && b[j] <= '9')
+		{
+			b[j] = b[j];
+		}
+		else if (b[j - 1] == '\n' || b[j - 1] == '\t' || b[j - 1] == ','
+			|| b[j - 1] == ';' || b[j - 1] == '.' || b[j - 1] == ' '
+			|| b[j - 1] == '!' || b[j - 1] == '?' || b[j - 1] == '"'
+			|| b[j - 1] == '(' || b[j - 1] == ')' || b[j - 1] == '{'
+			|| b[j - 1] == '}')
+		{
+			if (b[j] == '\n' || b[j] == '\t' || b[j] == ',' ||
+			    b[j] == ';' || b[j] == '.' || b[j] == ' ' || b[j] ==
+			    '!' || b[j] == '?' || b[j] == '"' || b[j] == '(' ||
+			    b[j] == ')' || b[j] == '{' || b[j] == '}')
 			{
-				b[i] -= 32;
+				b[j] = b[j];
 			}
+			else if (b[j] >= 'A' && b[j] <= 'Z')
+			{
+				b[j] = b[j];
+			}
+			else
+			{
+				b[j] -= 32;
+			}
+		}
+		else
+		{
+			b[j] = b[j];
 		}
 	}
 	return (b);
