@@ -1,0 +1,13 @@
+#include "main.h"
+#include <string.h>
+/**
+ * _strcat - appends a string to another, overwritting the null byte
+ * @dest: holds the string that will be appended to
+ * @src: the string being appended
+ *
+ * Return: returns char pointer that has been appended
+ */
+char *_strcat(char *dest, char *src)
+{
+	strcat(dest, src);
+}
