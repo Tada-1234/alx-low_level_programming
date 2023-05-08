@@ -1,6 +1,6 @@
 #include <string.h>
 /**
- * _strpbrk - locate 1st match string s of any of the bytes in the string accept
+ * _strpbrk - locate 1st match s of the bytes in the string accept
  * @s: string to scan through
  * @accept: bytes to match
  *
