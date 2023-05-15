@@ -1,0 +1,12 @@
+#include <string.h>
+/**
+ * _strpbrk - locate 1st match s of the bytes in the string accept
+ * @s: string to scan through
+ * @accept: bytes to match
+ *
+ * Return: pointer to the byte that is the 1st occurance in s
+ */
+char *_strpbrk(char *s, char *accept)
+{
+	return (strpbrk(s, accept));
+}
