@@ -20,8 +20,8 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 			action(*(array + i));
 		}
 	}
-	else if (array != NULL || action != NULL)
+	else
 	{
-		printf("Error");
+		return;
 	}
 }

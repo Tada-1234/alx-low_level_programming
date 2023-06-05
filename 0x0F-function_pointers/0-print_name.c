@@ -16,6 +16,6 @@ void print_name(char *name, void (*f)(char *))
 	}
 	else
 	{
-		printf("%s\n", name);
+		return;
 	}
 }
