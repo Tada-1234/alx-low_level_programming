@@ -1,18 +1,30 @@
 #include <stdio.h>
+#include "lists.h"
 /**
- * struct list_s - singly linked list
- * @str: string - (malloc'ed string)
- * @len: length of the string
- * @next: points to the next node
+ * print_list - singly linked list
+ * @h: pointer tofirst element in list
  *
- * Description: singly linked list node structure
+ * Return: singly linked list node structure
  */
-typedef struct list_s
-{
-    char *str;
-    unsigned int len;
-    struct list_s *next;
-} list_t;
 size_t print_list(const list_t *h)
 {
+	size_t i;
+
+	i = 0;
+	while (h != NULL)
+	{
+		if (h->str != NULL)
+		{
+			printf("[%u] ", h->len);
+			printf("%s\n", h->str);
+		}
+		else
+		{
+			printf("[0] (nil)\n");
+		}
+
+		h = h->next;
+		i++;
+	}
+	return (i);
 }
