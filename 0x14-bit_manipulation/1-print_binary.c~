@@ -1,0 +1,40 @@
+#include "main.h"
+#include <stdio.h>
+/**
+ * print_binary - print binary representation
+ * @n: decimal number
+ *
+ * Return: nothing
+ */
+void print_binary(unsigned long int n)
+{
+	int i, k;
+	unsigned long int no_bits;
+
+	no_bits = n;
+	k = 0;
+	while (no_bits)
+	{
+		k++;
+		no_bits >>= 1;
+	}
+	if (n == 0)
+	{
+		_putchar('0');
+	}
+	else
+	{
+		for (i = (k - 1); i >= 0; i--)
+		{
+			/*using masks*/
+			int mask, num, shift;
+			char c;
+
+			mask = (1 << i);
+			num = (mask & n);
+			shift = (num >> i);
+			c = (char)shift;
+			_putchar(c);
+		}
+	}
+}

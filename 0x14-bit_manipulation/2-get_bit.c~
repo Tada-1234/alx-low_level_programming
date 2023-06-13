@@ -1,0 +1,11 @@
+#include "main.h"
+#include <stdio.h>
+int get_bit(unsigned long int n, unsigned int index)
+{
+	int i, j, mask;
+
+	mask = (1 << index);
+	j = mask & n;
+	i = (j >> index);
+	return (i);
+}
