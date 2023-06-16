@@ -40,10 +40,10 @@ int append_text_to_file(const char *filename, char *text_content)
 	/* Check if the file exists*/
 	if (stat(filename, &file_stat) == 0)
 	{
-		return 1;  /* File exists and write operation was successful*/
+		return (1);  /* File exists and write operation was successful*/
 	}
 	else
 	{
-		return -1;  /* File does not exist or permissions issue*/
+		return (-1);  /* File does not exist or permissions issue*/
 	}
 }
