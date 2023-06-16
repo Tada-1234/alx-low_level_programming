@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include "main.h"
+#include <unistd.h>
+#include <stdlib.h>
+/**
+ * read_textfile - read contents of file and print
+ * @filename: the name of file to read
+ * @letters: number of letters it could read
+ *
+ * Return: number of letters actually read
+ */
+ssize_t read_textfile(const char *filename, size_t letters)
+{
+	int fd, reaD;
+	char *buf;
+	ssize_t num_char;
+
+	buf = malloc(sizeof(char) * letters);
+	if (filename == NULL)
+	{
+		return (0);
+	}
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		return (0);
+	}
+	reaD = -1; /*stores read return value*/
+	reaD = read(fd, buf, letters);
+	if (reaD == -1)
+	{
+		return (0);
+	}
+	num_char = write(1, buf, letters);
+	if (num_char == -1)
+	{
+		return (0);
+	}
+	close(fd);
+	free(buf);
+	return (num_char);
+}

@@ -1,0 +1,49 @@
+#include "main.h"
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/stat.h>
+/**
+ * append_text_to_file - appends to file
+ * @filename: name of file to create
+ * @text_content: the contents of the file
+ *
+ * Return: 1 or -1
+ */
+int append_text_to_file(const char *filename, char *text_content)
+{
+	int len, wRite, fd;
+	struct stat file_stat;
+
+	if (filename == NULL)
+	{
+		return (-1);
+	}
+	fd = open(filename, O_APPEND | O_WRONLY);
+	if (fd == -1)
+	{
+		return (-1);
+	}
+	if (text_content != NULL)
+	{
+		len = (int)strlen(text_content);
+		wRite = (int)write(fd, text_content, len);
+		if (wRite == -1)
+		{
+			close(fd);
+			return (-1);
+		}
+	}
+	close(fd);
+
+	/* Check if the file exists*/
+	if (stat(filename, &file_stat) == 0)
+	{
+		return 1;  /* File exists and write operation was successful*/
+	}
+	else
+	{
+		return -1;  /* File does not exist or permissions issue*/
+	}
+}
